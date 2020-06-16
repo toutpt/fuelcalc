@@ -1,7 +1,7 @@
 {
   "name": "fuelcalc",
   "short_name": "fuelcalc",
-  "start_url": "/",
+  "start_url": "/fuelcalc",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
