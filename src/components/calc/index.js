@@ -25,8 +25,18 @@ class State {
 	}
 
 	set(attr, value) {
-		if (!isNaN(value)) {
-			this[attr] = value;
+		
+		let v = value;
+		if (typeof value === 'string') {
+			if (value.indexOf('.') !== -1) {
+				v = parseFloat(value);
+			} else {
+				v = parseInt(value, 10);
+			}
+		}
+		console.log(`set attr ${attr} ${value} => ${v}`)
+		if (!isNaN(v)) {
+			this[attr] = v;
 			this.compute();
 			this.onChange();
 		} else {

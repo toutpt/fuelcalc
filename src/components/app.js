@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import { h } from 'preact';
 
 import Header from './header';
 import { Calc } from './calc';
