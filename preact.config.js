@@ -3,4 +3,5 @@ export default (config) => {
         console.log('### dev output');
         config.output.publicPath = '/fuelcalc';
     }
+    return config;
 };

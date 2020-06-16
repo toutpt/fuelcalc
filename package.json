@@ -6,7 +6,7 @@
   "scripts": {
     "build": "preact build --sw false --dest docs",
     "serve": "sirv build --cors --single",
-    "dev": "NODE_ENV=development preact watch",
+    "dev": "preact watch",
     "lint": "eslint src",
     "test": "jest"
   },
