@@ -9,7 +9,6 @@ html, body {
 	color: #444;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-image: url(https://live.staticflickr.com/4844/45573295934_555c082cb2_k.jpg);
 }
 
 * {
@@ -18,4 +17,11 @@ html, body {
 
 #app {
 	height: 100%;
+}
+
+body {
+	background-image: url(https://live.staticflickr.com/4844/45573295934_555c082cb2_k.jpg);
+	background-size:     cover;
+	background-repeat:   no-repeat;
+	background-position: center center;
 }
