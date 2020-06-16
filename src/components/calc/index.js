@@ -10,6 +10,7 @@ class State {
 		this.raceLength = 20; //minutes
 		this.literPerLap = 2.60;
 		this.maxTank = 105; // capacity
+		this.onChange = () => {};
 		if (prev) {
 			this.setState = prev.setState;
 			this.laptimeM = prev.laptimeM;
@@ -17,7 +18,9 @@ class State {
 			this.raceLength = prev.raceLength;
 			this.literPerLap = prev.literPerLap;
 			this.maxTank = prev.maxTank;
+			this.onChange = prev.onChange;
 		}
+		
 		this.compute();
 	}
 
@@ -25,7 +28,7 @@ class State {
 		if (!isNaN(value)) {
 			this[attr] = value;
 			this.compute();
-			this.setState && this.setState(new State(this));
+			this.onChange();
 		} else {
 			console.error(`Try to set ${attr} to a value which is not a number`);
 		}
@@ -41,8 +44,8 @@ class State {
 function useCalc() {
 	const [state, setState] = useState(new State());
 	useEffect(() => {
-		state.setState = setState;
-	}, [state.setState]);
+		state.onChange = () => setState(new State(state));
+	}, [state]);
 	return state;
 }
 
